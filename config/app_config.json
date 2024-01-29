@@ -1,0 +1,6 @@
+{
+    "staging_client_id": "dev_abcdefghijklmnopqrstuvwxyz",
+    "staging_client_secret": "dev_zyxwvutsrqponmlkjihgfedcba",
+    "prod_client_id": "prod_abcdefghijklmnopqrstuvwxyz",
+    "prod_client_secret": "prod_zyxwvutsrqponmlkjihgfedcba"
+}

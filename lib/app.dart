@@ -5,6 +5,9 @@ import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pkce_auth_with_flutter/cubit/login_cubit.dart';
+import 'package:pkce_auth_with_flutter/screens/login_screen.dart';
 
 (String, Uint8List) generateCodeVerifier(int bytes) {
   if (bytes < 32 || bytes > 96) {
@@ -89,8 +92,6 @@ class _MyAppState extends State<MyApp> {
     //
     developer.log(challengeVerificationResult.toString(),
         name: "Is challenge verified");
-    developer.log(challengeVerificationResult.toString(),
-        name: "Is challenge verified");
 
     super.initState();
   }
@@ -99,17 +100,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Sample App for testing PKCE Auth"),
-        ),
-        body: const Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Code verifier generated successfully!!"),
-          ],
-        )),
+      home: BlocProvider(
+        create: (context) => LoginCubit(),
+        child: const LoginScreen(),
       ),
     );
   }

@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pkce_auth_with_flutter/home.dart';
+import 'package:pkce_auth_with_flutter/app.dart';
 
 
 void main() {
